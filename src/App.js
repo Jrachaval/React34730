@@ -1,28 +1,34 @@
 /* import logo from './logo.svg'; */
 import './App.css';
 import CartWidget from './components/CartWidget';
+import ItemCount from './components/ItemCount';
 import Itemlistcontainer from './components/Itemlistcontainer';
 import NavBar from './components/NavBar';
 
 
-function App() {
 
-  const mensaje = 'Bienvenido a mi app'
-  const estilos = {
-    backgroundColor: '#888',
-    padding: '20px'
-  }
+function App() {
 
 
   return (
     
     <div className='container'>
       <NavBar/>
-      <CartWidget/>
-      <Itemlistcontainer greeting={'REACT 34730'}/>
+      
+      <Itemlistcontainer greeting={''}/>
+
+
+
+      <ItemCount/><CartWidget/>
       
 
+      
+    
     </div>
+    
+
+    
+    
     
     
 
