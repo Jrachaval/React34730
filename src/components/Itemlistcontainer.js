@@ -1,6 +1,11 @@
 const Itemlistcontainer = ({greeting}) => {
   return (
+    <>
     <div>{greeting}</div>
+    <Itemlist/>
+    </>
+    
+   
   )
 }
 
