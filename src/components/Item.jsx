@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Item = (title, description) => {
+const Item = ({id,title, description}) => {
   return (
     <div>
-      <h1>{title}</h1>
-      <h2>{description}</h2>
+      <h1>{id}</h1>
+      <h2>{title}</h2>
+      <h3>{description}</h3>
+    
     </div>
   )
 }

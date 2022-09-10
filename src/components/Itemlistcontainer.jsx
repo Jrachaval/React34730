@@ -2,11 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import itemsjson from "../components/Milista.json"
 import Itemlist from "../components/Itemlist"
-import { list } from 'postcss';
 
 
 const Itemlistconainer = () => {
-  const [Items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
 
       const getItems = (data, time)=> new Promise((resolve,reject) =>{
         setTimeout(() => {
@@ -20,14 +19,14 @@ const Itemlistconainer = () => {
 
       useEffect (()=>{
         getItems(itemsjson, 2000). then ((res) =>{
-          setItems(res)
+        setItems(res)
         }).catch((err)=> console.log (err,": sin datos"));
       },[])
 
 
   return (
     <div>
-      <Itemlist list={Items} />
+      <Itemlist list={items} />
       
     </div>
   );
