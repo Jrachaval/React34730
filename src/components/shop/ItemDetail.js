@@ -1,10 +1,15 @@
 import React from 'react'
+import ItemCount from '../ItemCount'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item: {name, price}}) => {
   return (
     <div>
-        <li>{item.name}</li>
+        <li>{name}</li>
+        <li>{price}</li>
+
+        <ItemCount/>
     </div>
+    
   )
 }
 

@@ -1,15 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import ItemDetail from './ItemDetail'
+import products from './Productsdata'
 
-const product = {
-    name: 'ticket',
-    price: 600
-}
+
 const Itemdetailcontainer = () => {
 
     const [item, setItem] = useState({})
-
+    const {slug} = useParams()
+    
     useEffect(() => {
         getItem ().then( data => {
             setItem(data)
@@ -18,14 +19,16 @@ const Itemdetailcontainer = () => {
     
     
     const getItem = () => { 
-       return  new Promise((resolve, reject) => {
+       return  new Promise((resolve) => {
             setTimeout(() => {
-                resolve ( 'Item')                
+                resolve ( products.find (p => p.slug == slug))                
             }, 2000);
         })
      }
   return (
+    <>
         <ItemDetail item={item}/>
+    </>
     
   )
 }
